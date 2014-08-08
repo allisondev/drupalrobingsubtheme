@@ -29,23 +29,176 @@ $breakpoint-small-width: max-width 400px;
 $breakpoint-medium-width: max-width 768px;
 $breakpoint-large-width: max-width 1111px;
 
-$robinred: #FF4B2B;
+$robinred: #E07407;
+$robinbeigelight: #E1CEBA;
+$robinbeigedark: #AD9778;
+
+// Extends
+%contentbox {
+  background: white;
+  
+  border: 3px solid $robinbeigelight;
+  border-radius: 5px;
+  margin: 3%;
+}
 
 // Robin Styles
 
-header {
-  background: $robinred;
-  height: 150px;
+html {
+  padding: 0 25px;
 }
 
-#site-name { 
+header {
+  height: 200px;
+
+  background-image: url('../images/robin.png');
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 300px 200px;
+
+}
+
+div#name-and-slogan {
   margin: 0 auto;
-  display: block;
-  
-  a {
-    color: white;
+  width: 100%;
+}
+
+h1, h2 { 
+
+  color: $robinbeigedark;
+  font-weight: bold;
+
+  &#page-title{
+    font-size: 3em;
+  }
+
+  &#site-name {
+    font-weight: bold;
+    font-size: 3em;
+    text-align: right;
+  }
+
+  a span {
+    color: $robinred;
   }
 }
+
+div#navigation{
+  padding: 0;
+
+  nav {
+    background-color: $robinbeigedark;
+    color: $robinbeigelight;
+
+    border-radius: 5px;
+
+    margin: 0 auto;
+    padding: 10px 10px;
+
+    font-size: 2em;
+
+    a {
+      color: white;
+      text-decoration: none;
+
+      &:hover {
+        color: $robinred;
+      }
+    }
+  }
+}
+
+div#main {
+  background: white;
+}
+
+div#content {
+  @extend %contentbox;
+
+  margin: 5px;
+  border: none;
+}
+
+div.messages--error {
+  border-radius: 5px;
+}
+
+div#block-user-login {
+  @extend %contentbox;
+  text-align: center;
+  padding: 10px;
+  width: 90%;
+}
+
+div.form-item { 
+
+  text-align: center;
+
+  label {
+    color: $robinbeigedark;
+  }
+  
+  input {
+    border-radius: 5px;
+  }
+
+}
+
+div.item-list{
+
+  text-align: center;
+
+  ul {
+    padding: 0%;
+  }
+
+  a {
+    color: $robinred;
+    font-size: .75em;
+    text-decoration: none;
+
+    &:hover{
+      font-style: italic;
+      text-decoration: underline;
+    }
+  }
+}
+
+span.form-required {
+  color: $robinred;
+}
+
+input#edit-submit {
+  background-color: $robinbeigedark;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  display: block;
+  margin: 0 auto;
+}
+
+footer {
+
+  background-color: $robinbeigelight;
+  color: $robinbeigedark;
+
+  text-align: center;
+  padding: 5px;
+  height: 100px;
+
+  border-radius: 5px;
+
+  a {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      font-style: italic;
+      text-decoration: underline;
+    }
+  }
+}
+
 
 /* Correct `block` display not defined in IE 8/9. */
 article,
